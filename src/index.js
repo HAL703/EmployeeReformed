@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Tree from "react-d3-tree";
-
 import "./styles.css";
+import "./hierarchyData.json";
 
-const myTreeData = [
+var jsonString = require('./hierarchyData.json');
+console.log(jsonString);
+const myTreeData = [ 
   {
-    name: "Gaurang Torvekar",
+    name: jsonString[0],
     attributes: {
       keyA: "val A",
       keyB: "val B",
@@ -14,7 +16,7 @@ const myTreeData = [
     },
     children: [
       {
-        name: "Avadhoot",
+        name: jsonString[2],
         attributes: {
           keyA: "val A",
           keyB: "val B",
@@ -22,26 +24,26 @@ const myTreeData = [
         },
         children: [
           {
-            name: "Richard"
+            name: jsonString[7],
           },
           {
-            name: "Constantine",
+            name: jsonString[8],
             children: [
               {
-                name: "Mia"
+                name: jsonString[1],
               }
             ]
           },
           {
-            name: "Daniel"
+            name: jsonString[5],
           }
         ]
       },
       {
-        name: "Mia"
+        name: jsonString[1],
       },
       {
-        name: "Varun",
+        name: jsonString[3],
         attributes: {
           keyA: "val A",
           keyB: "val B",
@@ -49,80 +51,77 @@ const myTreeData = [
         },
         children: [
           {
-            name: "Ivo",
+            name: jsonString[6],
             attributes: {
               keyA: "val A",
               keyB: "val B",
               keyC: "val C"
             },
-            children: [
-              {
-                name: "Level 2: A",
-                attributes: {
-                  keyA: "val A",
-                  keyB: "val B",
-                  keyC: "val C"
-                },
-                children: [
-                  {
-                    name: "Level 2: A",
-                    attributes: {
-                      keyA: "val A",
-                      keyB: "val B",
-                      keyC: "val C"
-                    }
-                  },
-                  {
-                    name: "Level 2: B"
-                  }
-                ]
-              },
-              {
-                name: "Level 2: B"
-              }
-            ]
+            // children: [
+            //   {
+            //     name: "Level 2: A",
+            //     attributes: {
+            //       keyA: "val A",
+            //       keyB: "val B",
+            //       keyC: "val C"
+            //     },
+            //     children: [
+            //       {
+            //         name: "Level 2: A",
+            //         attributes: {
+            //           keyA: "val A",
+            //           keyB: "val B",
+            //           keyC: "val C"
+            //         }
+            //       },
+            //       {
+            //         name: "Level 2: B"
+            //       }
+            //     ]
+            //   },
+            //   {
+            //     name: "Level 2: B"
+            //   }
+            // ]
           },
-          {
-            name: "Vijay"
-          }
         ]
       },
       {
-        name: "Mohit",
+        name: jsonString[4],
         children: [
           {
-            name: "Rohit",
+            name: jsonString[8],
             attributes: {
               keyA: "val A",
               keyB: "val B",
               keyC: "val C"
             },
-            children: [
-              {
-                name: "Level 2: A",
-                attributes: {
-                  keyA: "val A",
-                  keyB: "val B",
-                  keyC: "val C"
-                },
-                children: [
-                  {
-                    name: "Level 2: A",
-                    attributes: {
-                      keyA: "val A",
-                      keyB: "val B",
-                      keyC: "val C"
-                    }
-                  },
-                  {
-                    name: "Level 2: B"
-                  }
-                ]
-              }
-            ]
+            // children: [
+            //   {
+            //     name: "Level 2: A",
+            //     attributes: {
+            //       keyA: "val A",
+            //       keyB: "val B",
+            //       keyC: "val C"
+            //     },
+            //     children: [
+            //       {
+            //         name: "Level 2: A",
+            //         attributes: {
+            //           keyA: "val A",
+            //           keyB: "val B",
+            //           keyC: "val C"
+            //         }
+            //       },
+            //       {
+            //         name: "Level 2: B"
+            //       }
+            //     ]
+            //   }
+            // ]
           },
           {
-            name: "Pranav"
+            name: jsonString[9],
           }
         ]
       }
@@ -177,6 +176,7 @@ const treeStyle = {
 class NodeLabel extends React.PureComponent {
   render() {
     const { className, nodeData } = this.props;
+    console.log(this.props);
     return (
       <div
         className={className}
@@ -198,11 +198,12 @@ class NodeLabel extends React.PureComponent {
     );
   }
 }
-
-function App() {
+//{nodeData.attributes.map((attribute))}
+//<ol>{nodeData.attributes}</ol>
+export default function App() {
   return (
     <div className="App">
-      //<h1>Electro Hierarchy</h1>
+      <h1>Electro Hierarchy</h1>
       <div id="treeWrapper" style={{ width: "100%", height: "120vh" }}>
         <Tree
           data={myTreeData}
