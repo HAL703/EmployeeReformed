@@ -2,31 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Tree from "react-d3-tree";
 import "./styles.css";
-import "./hierarchyNames.json";
 import './hierarchyData.json';
 
-var jsonString = require('./hierarchyNames.json');
 var jsonDataString = require('./hierarchyData.json');
-console.log(jsonDataString);
 var tempObj = Object.values(jsonDataString);
-console.log(tempObj);
-var data;
-for(var i = 0;i < tempObj.length; i++)
-{
-  data = tempObj[i];
-  console.log(data);
-  /*for(var j = 0;j < tempObj.length; j++)
-  { 
-    var data2 = data;
-    console.log(data2);
-  }*/
-}
-var data2 = Object.values(data);
-console.log(data2);
-console.log(data)
 const myTreeData = [ 
   {
-    name: tempObj[0].EmployeeName,//data[0].EmployeeName,//jsonString[0],
+    name: tempObj[0].EmployeeName,
     attributes: {
       keyA: tempObj[0].Position,
       keyB: tempObj[0].Department,
@@ -34,7 +16,7 @@ const myTreeData = [
     },
     children: [
       {
-        name: jsonString[2],
+        name: tempObj[2].EmployeeName,
         attributes: {
           keyA: tempObj[2].Position,
           keyB: tempObj[2].Department,
@@ -42,7 +24,7 @@ const myTreeData = [
         },
         children: [
           {
-            name: jsonString[7],
+            name: tempObj[7].EmployeeName,
             attributes: {
               keyA: tempObj[7].Position,
               keyB: tempObj[7].Department,
@@ -50,7 +32,7 @@ const myTreeData = [
             },
           },
           {
-            name: jsonString[8],
+            name: tempObj[8].EmployeeName,
             attributes: {
               keyA: tempObj[8].Position,
               keyB: tempObj[8].Department,
@@ -58,7 +40,7 @@ const myTreeData = [
             },
             children: [
               {
-                name: jsonString[1],
+                name: tempObj[1].EmployeeName,
                 attributes: {
                   keyA: tempObj[1].Position,
                   keyB: tempObj[1].Department,
@@ -68,7 +50,7 @@ const myTreeData = [
             ]
           },
           {
-            name: jsonString[5],
+            name: tempObj[5].EmployeeName,
             attributes: {
               keyA: tempObj[5].Position,
               keyB: tempObj[5].Department,
@@ -78,7 +60,7 @@ const myTreeData = [
         ]
       },
       {
-        name: jsonString[1],
+        name: tempObj[1].EmployeeName,
         attributes: {
           keyA: tempObj[1].Position,
           keyB: tempObj[1].Department,
@@ -86,7 +68,7 @@ const myTreeData = [
         },
       },
       {
-        name: jsonString[3],
+        name: tempObj[3].EmployeeName,
         attributes: {
           keyA: tempObj[3].Position,
           keyB: tempObj[3].Department,
@@ -94,43 +76,17 @@ const myTreeData = [
         },
         children: [
           {
-            name: jsonString[6],
+            name: tempObj[6].EmployeeName,
             attributes: {
               keyA: tempObj[6].Position,
               keyB: tempObj[6].Department,
               keyC: tempObj[6].YWC + " Years"
             },
-            // children: [
-            //   {
-            //     name: "Level 2: A",
-            //     attributes: {
-            //       keyA: "val A",
-            //       keyB: "val B",
-            //       keyC: "val C"
-            //     },
-            //     children: [
-            //       {
-            //         name: "Level 2: A",
-            //         attributes: {
-            //           keyA: "val A",
-            //           keyB: "val B",
-            //           keyC: "val C"
-            //         }
-            //       },
-            //       {
-            //         name: "Level 2: B"
-            //       }
-            //     ]
-            //   },
-            //   {
-            //     name: "Level 2: B"
-            //   }
-            // ]
           },
         ]
       },
       {
-        name: jsonString[4],
+        name: tempObj[4].EmployeeName,
         attributes: {
           keyA: tempObj[4].Position,
           keyB: tempObj[4].Department,
@@ -138,38 +94,15 @@ const myTreeData = [
         },
         children: [
           {
-            name: jsonString[8],
+            name: tempObj[8].EmployeeName,
             attributes: {
               keyA: tempObj[8].Position,
               keyB: tempObj[8].Department,
               keyC: tempObj[8].YWC + " Years"
             },
-            // children: [
-            //   {
-            //     name: "Level 2: A",
-            //     attributes: {
-            //       keyA: "val A",
-            //       keyB: "val B",
-            //       keyC: "val C"
-            //     },
-            //     children: [
-            //       {
-            //         name: "Level 2: A",
-            //         attributes: {
-            //           keyA: "val A",
-            //           keyB: "val B",
-            //           keyC: "val C"
-            //         }
-            //       },
-            //       {
-            //         name: "Level 2: B"
-            //       }
-            //     ]
-            //   }
-            // ]
           },
           {
-            name: jsonString[9],
+            name: tempObj[9].EmployeeName,
             attributes: {
               keyA: tempObj[9].Position,
               keyB: tempObj[9].Department,
@@ -229,7 +162,6 @@ const treeStyle = {
 class NodeLabel extends React.PureComponent {
   render() {
     const { className, nodeData } = this.props;
-    //console.log(nodeData.attributes);
     return (
       <div
         className={className}
@@ -257,8 +189,6 @@ class NodeLabel extends React.PureComponent {
     );
   }
 }
-//{nodeData.attributes.map((attribute))}
-//<ol>{nodeData.attributes}</ol>
 export default function App() {
   return (
     <div className="App">
