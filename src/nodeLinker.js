@@ -22,10 +22,11 @@ con.connect(function(err) {
       employeeNames[i] = row.EmployeeName;
       console.log(employeeNames[i]);
       i++;
-    return employeeNames;
+    console.log(result)
+    return result;
 
     });
-    var json = JSON.stringify(employeeNames);
+    var json = JSON.stringify(result);
     fs.writeFile('./hierarchyData.json',json, err => {
       if(err) throw err;
     });
