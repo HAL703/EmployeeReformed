@@ -8,7 +8,7 @@
 7. ~~Shall have login authentication~~ see readme, goes outside the scope of program
 8. ~~Shall have various pages or links~~ see readme
 9. ~~Shall have contact info~~ done
-10. ~~Shall have Git commits often~~ done, or atleast I tried to but a lot of the project involved a ton of research
+10. ~~Shall have Git commits often~~ done, or atleast I tried to but a lot of the project involved a ton of research, this git repo is taken from a previous one
 11. ~~Shall/Will have slick animations with the tree diagram~~ done, there are some nice animations for the tree diagram
 12. ~~Shall/Will include something from Node~~ done, had to use node with creating/fetching database information
 13. Shall/Will have a budgeting page for Electro with a different database file
