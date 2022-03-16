@@ -24,8 +24,13 @@ body {
     place-items: center;
 }
 .contact {
-    height: 200vh;
+    height: 100vh;
     background-color: #333;
+    display: grid;
+    place-items: center;
+}
+.contactHead {
+    height: 100vh;
     display: grid;
     place-items: center;
 }
@@ -141,7 +146,9 @@ nav {
     .nav-toggle-label {
         display: none;
     }
-
+    .contactHead {
+        margin:0px;
+    }
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;

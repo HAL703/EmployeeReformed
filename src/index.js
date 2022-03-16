@@ -38,16 +38,16 @@ const myTreeData = [
               keyB: tempObj[8].Department,
               keyC: tempObj[8].YWC + " Years"
             },
-            children: [
-              {
-                name: tempObj[1].EmployeeName,
-                attributes: {
-                  keyA: tempObj[1].Position,
-                  keyB: tempObj[1].Department,
-                  keyC: tempObj[1].YWC + " Years"
-                },
-              }
-            ]
+            // children: [
+            //   {
+            //     //name: tempObj[9].EmployeeName,
+            //     //attributes: {
+            //       //keyA: tempObj[1].Position,
+            //       //keyB: tempObj[1].Department,
+            //       //keyC: tempObj[1].YWC + " Years"
+            //     },
+            //   //}
+            // ]
           },
           {
             name: tempObj[5].EmployeeName,
@@ -170,9 +170,9 @@ class NodeLabel extends React.PureComponent {
           height: "70px",
           borderTop: "2px solid #2F80ED",
           textAlign: "center",
-          // position: "fixed",
+          position: "fixed",
           zIndex: "1000",
-          // left: "-10px",
+          left: "-10px",
           boxShadow: "0px 10px 10px rgba(0, 0, 0, 0.1)",
           padding: "5px 0",
           borderRadius: "5px"
@@ -189,14 +189,13 @@ class NodeLabel extends React.PureComponent {
     );
   }
 }
+//<h1>Electro Hierarchy</h1>
 export default function App() {
   return (
     <div className="App">
-      <h1>Electro Hierarchy</h1>
       <div id="treeWrapper" style={{ width: "100%", height: "120vh" }}>
         <Tree
           data={myTreeData}
-          // nodeSvgShape={svgSquare}
           nodeSvgShape={test}
           pathFunc="step"
           separation={{ siblings: 2, nonSiblings: 2 }}
@@ -212,7 +211,7 @@ export default function App() {
               x: -100
             }
           }}
-          initialDepth={2}
+          initialDepth={0}
         />
       </div>
     </div>
