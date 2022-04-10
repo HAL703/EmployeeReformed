@@ -193,7 +193,8 @@ class NodeLabel extends React.PureComponent {
 export default function App() {
   return (
     <div className="App">
-      <div id="treeWrapper" style={{ width: "100%", height: "120vh" }}>
+      <div id="treeWrapper" style={{ width: "100%", height: "120vh", position: "fixed", top: "13%" }}>
+        <h4> Welcome to the Electro hierarchy. Double click on a box to open or close it.</h4>
         <Tree
           data={myTreeData}
           nodeSvgShape={test}
