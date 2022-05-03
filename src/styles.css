@@ -8,3 +8,11 @@
   width: 180px;
   margin: 10px;
 }
+
+#treeWrapper {
+    background-color: rgb(26, 28, 29);
+}
+
+.linkBase {
+    stroke: white;
+}
