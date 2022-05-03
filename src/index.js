@@ -133,7 +133,7 @@ const test = {
     height: 0,
     x: -20,
     y: 20,
-    stroke: "#2F80ED"
+    stroke: "#2f80ed"
   }
 };
 
@@ -167,8 +167,8 @@ class NodeLabel extends React.PureComponent {
         className={className}
         style={{
           background: "#ffffff",
-          height: "70px",
-          borderTop: "2px solid #2F80ED",
+          height: "90px",
+          border: "2px solid #2F80ED",
           textAlign: "center",
           position: "fixed",
           zIndex: "1000",
@@ -189,19 +189,18 @@ class NodeLabel extends React.PureComponent {
     );
   }
 }
-//<h1>Electro Hierarchy</h1>
 export default function App() {
   return (
     <div className="App">
-      <div id="treeWrapper" style={{ width: "100%", height: "120vh", position: "fixed", top: "13%" }}>
-        <h4> Welcome to the Electro hierarchy. Double click on a box to open or close it.</h4>
+      <div id="treeWrapper" style={{ width: "100%", height: "120vh", position: "fixed", top: "6.5%" }}>
+        <h4 style={{color: "white"}}> Welcome to the Electro hierarchy. Double click on a box to open or close it.</h4>
         <Tree
           data={myTreeData}
           nodeSvgShape={test}
           pathFunc="step"
           separation={{ siblings: 2, nonSiblings: 2 }}
           orientation="vertical"
-          translate={{ x: 800, y: 100 }}
+          translate={{ x: 950, y: 100 }}
           allowForeignObjects={true}
           nodeLabelComponent={{
             render: <NodeLabel className="myLabelComponentInSvg" />,
@@ -209,7 +208,7 @@ export default function App() {
               width: 220,
               height: 200,
               y: -50,
-              x: -100
+              x: -85
             }
           }}
           initialDepth={0}
