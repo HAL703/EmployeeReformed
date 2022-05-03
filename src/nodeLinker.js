@@ -1,9 +1,5 @@
-//function nodeLinker() { //export default 
 var mysql = require('mysql');
 const fs = require("fs");
-//var express = require('express');
-//var path = require('path');
-//var bodyParser = require('body-parser');
 
 var employeeNames = Object();
 var con = mysql.createConnection({
