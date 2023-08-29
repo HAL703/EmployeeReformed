@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Tree from "react-d3-tree";
+import {Tree} from "react-d3-tree";
 import "./styles.css";
-import './hierarchyData.json';
+import jsonDataString from './hierarchyData.json';
 
-var jsonDataString = require('./hierarchyData.json');
+//var jsonDataString = require('./hierarchyData.json');
+
 var tempObj = Object.values(jsonDataString);
+
 const myTreeData = [ 
   {
     name: tempObj[0].EmployeeName,
@@ -38,16 +40,6 @@ const myTreeData = [
               keyB: tempObj[8].Department,
               keyC: tempObj[8].YWC + " Years"
             },
-            // children: [
-            //   {
-            //     //name: tempObj[9].EmployeeName,
-            //     //attributes: {
-            //       //keyA: tempObj[1].Position,
-            //       //keyB: tempObj[1].Department,
-            //       //keyC: tempObj[1].YWC + " Years"
-            //     },
-            //   //}
-            // ]
           },
           {
             name: tempObj[5].EmployeeName,
